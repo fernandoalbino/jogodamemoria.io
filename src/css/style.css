@@ -78,7 +78,7 @@ body {
     gap: 20px;
 }
 
-@media only screen and (max-width: 991px) { 
+@media(max-width: 991px) { 
 
     .card {
         width: 80px;
