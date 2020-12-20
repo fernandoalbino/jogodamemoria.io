@@ -87,4 +87,7 @@ body {
     .card_back {
         font-size: 15px;
     }
+    .card_front img {
+        width: 90%;
+    }
 }
