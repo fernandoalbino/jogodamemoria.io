@@ -3,9 +3,9 @@ let game = {
     lockMode: false,
     firstCard: null,
     secondCard: null,
+    clicks: 0,
 
-
-    //array das tecnologias das cards (data-icon)
+    //array das imagens que serão usadas no jogo
     techs: [
         'bootstrap',
         'css',
@@ -43,12 +43,21 @@ let game = {
 
     },
 
+//verifica 
     checkMatch: function () {
         if (!this.firstCard || !this.secondCard) {
             return false;
         }
+        //incrementa após o segundo click
+        this.clicks++;
+        // console.log(this.clicks);
+        //Adiciona o valor do click 1 a 1 
+        document.getElementById("countBox").innerHTML = `${this.clicks}`;
+        document.getElementById("totalClicks").innerHTML = `Você precisou de ${this.clicks} jogadas para ganhar`;
+        //Verifica se o primeiro é igual ao segundo
         return this.firstCard.icon === this.secondCard.icon;
     },
+
 
     clearCards: function () {
         this.firstCard = null;
@@ -62,6 +71,7 @@ let game = {
         this.clearCards();
     },
 
+    //   retorna verdadeiro quando todas as cartas forem flipadas.
     checkGameOver() {
         //verificar as cartas não flipadas e caso seja = a 0 (zero) o jogo finaliza
         return this.cards.filter(card => !card.flipped).length == 0;
@@ -102,7 +112,7 @@ let game = {
     shuffleCards: function (cards) {
         let currentIndex = this.cards.length;
         let randomIndex = 0;
-        //randomiza as posições do card 
+            //Embaralha pegando o ultimo elemento e certifica que não vamos embaralhar elementos que já embaralhados.
         while (currentIndex !== 0) {
             //calcula o valor randomico entre a ultima posição e o index atual 
             randomIndex = Math.floor(Math.random() * currentIndex);

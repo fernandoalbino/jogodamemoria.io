@@ -10,17 +10,20 @@ startGame();
 function startGame() {
     initializeCards(game.createCardsFromTechs());
 }
-//inicializa as cards
+// função que vai criar o html das cartas
 function initializeCards(cards) {
     let gameBoard = document.getElementById("gameBoard");
     //limpa o tabuleiro
     gameBoard.innerHTML = '';
     //cria cada card
     game.cards.forEach(card => {
-
+        //define a varavel e cria o elemento div
         let cardElement = document.createElement('div');
+        //para cada elemento, adiciona o nome+id gerado
         cardElement.id = card.id;
+        //adiciona a classe card para cada elemento
         cardElement.classList.add(CARD);
+        //adiciona a info do icone no dataset 
         cardElement.dataset.icon = card.icon;
         //chama a função que cria o conteudo
         createCardContent(card, cardElement);

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+  <div class="text">Jogo da Memória</div>
 
   <div id="gameBoard">
 
@@ -24,10 +25,17 @@
     </div> -->
 
   </div>
+  
+  <div id="clickCount">
+    <div id="countBox">0</div>
+    
+  </div>
   <div id="gameOver">
     <div>
       Parabéns, você completou o jogo!
     </div>
+  </br>
+    <div id="totalClicks"></div></br>
     <button id="restart" onclick="restart()">Jogue novamente</button>
   </div>
   <script src="./src/js/game.js"></script>
