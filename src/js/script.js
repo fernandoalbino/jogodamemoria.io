@@ -93,4 +93,5 @@ function restart() {
     //set o estilo para none
     gameOverLayer.style.display = 'none';
     game.clicks = 0;
+    document.getElementById("countBox").innerHTML = ``;
 }
