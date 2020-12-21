@@ -92,4 +92,5 @@ function restart() {
     let gameOverLayer = document.getElementById("gameOver");
     //set o estilo para none
     gameOverLayer.style.display = 'none';
+    game.clicks = 0;
 }
